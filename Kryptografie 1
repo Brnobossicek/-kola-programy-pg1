@@ -1,0 +1,26 @@
+public class Main {
+    public static void main(String[] args) {
+
+        /*
+        všechny možnosti
+        a,b,c = {0,...,9}
+        a != b != c
+         */
+
+        int z = 0;
+
+        for (int a = 1; a < 9; a++) {
+            for (int b = 1; b < 9; b++) {
+                if (a == b){
+                    continue;
+                }
+                for (int c = 3; c < 10; c++) {
+                    if (c != b && c != a && a + b == c) {
+                        z += 1;
+                    }
+                }
+            }
+        }
+        System.out.println(z);
+    }
+}
