@@ -1,1 +1,1 @@
-# -kola-programy-pg1
+# skola-programy-pg1
