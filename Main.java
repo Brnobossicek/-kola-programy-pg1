@@ -1,43 +1,34 @@
-import java.util.Arrays;
+import java.io.File;
+import java.util.ArrayList;
+import java.util.Collections;
 
 public class Main {
-
-    //static void sort(UmiSePorovnat[] arr) {
-        /*
-        for (int l = 0; l < arr.length - 1; l++){
-            for (int h = l + 1; h < arr.length; h++){
-                if (arr[h] < arr[l]){
-                    int x = arr[h];
-                    arr[h] =  arr[l];
-                    arr[l] = x;
-                }
-            }
-        }
-    }
-
-         */
-        /*
-        boolean rozbite = true;
-        while (rozbite) {
-            rozbite = false;
-            for (int i = 0; i < arr.length - 1; i++) {
-                if (arr[i].jsemVetsiNez( arr[i + 1])) { //swap
-                    rozbite = true;
-                    UmiSePorovnat x = arr[i];
-                    arr[i] = arr[i + 1];
-                    arr[i + 1] = x;
-                }
-            }
-        }
-    }
-
-         */
-
     public static void main(String[] args) {
-        CeleCislo[] arr = {new CeleCislo(24), new CeleCislo(1), new CeleCislo(30)};
-        Arrays.sort(arr);
-        for (CeleCislo v : arr) {
-            System.out.println(v);
+
+        ArrayList arr = new ArrayList();
+        
+        for (String jmeno: new File("Z:/").list()) {
+            JedenSoubor s = new JedenSoubor(jmeno);
+            arr.add(s);
         }
+        Collections.sort(arr);
+        for (int i = 0; i < arr.size(); i++){
+            System.out.println(arr.get(i));
+        }
+        //getAllFiles(f);
     }
+    /*
+    private static void getAllFiles(File curDir) {
+        File[] filesList = curDir.listFiles();
+        for(File f : filesList){
+            if(f.isDirectory())
+                getAllFiles(f);
+            if(f.isFile()){
+                System.out.println(f.getName());
+            }
+        }
+
+    }
+
+     */
 }
